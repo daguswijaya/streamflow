@@ -3,8 +3,8 @@ FROM node:18
 # Set direktori kerja
 WORKDIR /app
 
-# Install ffmpeg dan pm2
-RUN apt update && apt install -y ffmpeg
+# Install ffmpeg dan sqlite
+RUN apt-get update && apt-get install -y ffmpeg sqlite3 libsqlite3-dev && rm -rf /var/lib/apt/lists/*
 
 # Salin file dependensi dan kode aplikasi
 COPY package*.json ./
