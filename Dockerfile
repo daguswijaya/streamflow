@@ -5,7 +5,6 @@ WORKDIR /app
 
 # Install ffmpeg dan pm2
 RUN apt update && apt install -y ffmpeg
-RUN npm install -g pm2
 
 # Salin file dependensi dan kode aplikasi
 COPY package*.json ./
@@ -16,4 +15,4 @@ COPY . .
 EXPOSE 5000
 
 # Jalankan aplikasi
-CMD ["pm2-runtime", "src/server.js"]
+CMD ["src/server.js"]
