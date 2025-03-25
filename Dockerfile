@@ -4,7 +4,7 @@ FROM node:18
 WORKDIR /app
 
 # Install ffmpeg dan sqlite
-RUN apt-get update && apt-get install -y ffmpeg sqlite3 libsqlite3-dev wget && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg sqlite3 libsqlite3-dev wget && rm -rf /var/lib/apt/lists/*
 
 # Salin file dependensi dan kode aplikasi
 COPY package*.json ./
